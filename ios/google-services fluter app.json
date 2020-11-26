@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "564996909693",
+    "firebase_url": "https://flutter-meet-demo.firebaseio.com",
+    "project_id": "flutter-meet-demo",
+    "storage_bucket": "flutter-meet-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564996909693:android:86aac2f23c13e4f4a8df14",
+        "android_client_info": {
+          "package_name": "com.example.flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "564996909693-gfn512ko1lavu350v8elg3ntceb5c5ru.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUSwh4q6bL4kNKZku_7p7jhfgR8TKzYbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "564996909693-gfn512ko1lavu350v8elg3ntceb5c5ru.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

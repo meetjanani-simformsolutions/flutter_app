@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -5,6 +7,7 @@ import 'package:flutter_app/bottomnavigationbar.dart';
 import 'package:flutter_app/bottomnavigationbarpersistantdata.dart';
 import 'package:flutter_app/datapassintowidget/passData.dart';
 import 'package:flutter_app/apiCall.dart';
+import 'package:flutter_app/firebase/FirebaseLogin.dart';
 import 'package:flutter_app/gridview.dart';
 import 'package:flutter_app/listView.dart';
 import 'package:flutter_app/loginpage.dart';
@@ -27,11 +30,14 @@ import 'package:flutter_app/statemanagement/mobxapicall/MobxAPICallScreen.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:mobx/mobx.dart';
+import 'package:oktoast/oktoast.dart';
 import 'package:provider/provider.dart';
 
 import 'statemanagement/blocwetherapplication/WeatherAppScreen.dart';
 
-void main() {
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -55,7 +61,8 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: MyHomePage(title: 'Flutter Demo Home Page'),
+        // home: MyHomePage(title: 'Flutter Demo Home Page'),
+        home: FirebaseLogin(),
       ),
     );
   }
@@ -629,6 +636,9 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: (){
           counterMobxStore.increment();
+          FirebaseAuth.instance.signOut();
+          // FirebaseAuth.instance.currentUser.delete();
+          Navigator.of(context).pop();
         },
         // onPressed: _incrementCounter,
         tooltip: 'Increment',
