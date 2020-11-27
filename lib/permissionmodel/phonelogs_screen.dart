@@ -1,6 +1,5 @@
 import 'package:call_log/call_log.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
 class PhonelogsScreen extends StatefulWidget {
   @override
@@ -11,7 +10,7 @@ class _PhonelogsScreenState extends State<PhonelogsScreen> {
   //Iterable<CallLogEntry> entries;
   TextEditingController t1 = TextEditingController();
   void call(String text) async{
-    bool res = await FlutterPhoneDirectCaller.callNumber(text);
+    // bool res = await FlutterPhoneDirectCaller.callNumber(text);
   }
 
   @override

@@ -13,7 +13,7 @@ abstract class MobXAPICall with Store{
   List<Result> randomUsers = List<Result>();
 
   @action
-  Future<void> APICall() async {
+  Future<void> apiCall() async {
     final String apiUrl = "https://randomuser.me/api/?results=10";
     var result = await http.get(apiUrl);
     randomUsers = ((randomUserModelFromJson(result.body).results)); // add records

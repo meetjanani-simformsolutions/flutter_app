@@ -41,7 +41,7 @@ class _PageViewDemoState extends State<PageViewDemo> {
         onPageChanged: (number){
           // pageController.jumpToPage(0);
           Fluttertoast.showToast(
-              msg: "Page Number : ${number}",
+              msg: "Page Number : $number",
               toastLength: Toast.LENGTH_SHORT,
               gravity: ToastGravity.BOTTOM,
               timeInSecForIos: 1,

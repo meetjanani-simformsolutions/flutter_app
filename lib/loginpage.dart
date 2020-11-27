@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/customwidgets.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class LoginPage extends StatefulWidget{
-  String value ;
+  final String value ;
   LoginPage({this.value});
   @override
   _LoginPageState createState() => _LoginPageState(value);

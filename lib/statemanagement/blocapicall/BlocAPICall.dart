@@ -14,4 +14,7 @@ class BlocAPICall {
     var result = await http.get(apiUrl);
     randomUsersController.sink.add((randomUserModelFromJson(result.body).results)); // add records
   }
+  void dispose(){
+    randomUsersController.close();
+  }
 }

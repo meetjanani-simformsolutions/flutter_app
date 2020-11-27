@@ -1,6 +1,4 @@
-import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/permissionmodel/camera_screen.dart';
 import 'package:flutter_app/permissionmodel/phonelogs_screen.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
@@ -45,7 +43,7 @@ class _PermissionHandlerDemoState extends State<PermissionHandlerDemo> {
             children: <Widget>[
               Container(
                 child: IconButton(
-                  onPressed: checkallpermission_opencamera,
+                  onPressed: checkAllPermissionOpenCamera,
                   icon: Icon(Icons.camera),
                   iconSize: 42,
                   color: Colors.white,
@@ -56,7 +54,7 @@ class _PermissionHandlerDemoState extends State<PermissionHandlerDemo> {
               ),
               Container(
                 child: IconButton(
-                    onPressed: checkpermission_phone_logs,
+                    onPressed: checkPermissionPhoneLogs,
                     icon: Icon(Icons.phone),
                     iconSize: 42,
                     color: Colors.white),
@@ -71,7 +69,7 @@ class _PermissionHandlerDemoState extends State<PermissionHandlerDemo> {
   }
 
   openCamera() async {
-    var picture = await ImagePicker.pickImage(
+    await ImagePicker().getImage(
       source: ImageSource.camera,
     );
     // var gallery = await ImagePicker.pickImage(
@@ -97,7 +95,7 @@ class _PermissionHandlerDemoState extends State<PermissionHandlerDemo> {
     );
   }
 
-  checkallpermission_opencamera() async {
+  checkAllPermissionOpenCamera() async {
     Map<Permission, PermissionStatus> statuses = await [
       Permission.camera,
       Permission.microphone,
@@ -116,7 +114,7 @@ class _PermissionHandlerDemoState extends State<PermissionHandlerDemo> {
     }
   }
 
-  checkpermission_opencamera() async {
+  checkPermissionOpenCamera() async {
     var cameraStatus = await Permission.camera.status;
     var microphoneStatus = await Permission.microphone.status;
 
@@ -144,7 +142,7 @@ class _PermissionHandlerDemoState extends State<PermissionHandlerDemo> {
     }
   }
 
-  checkpermission_phone_logs() async {
+  checkPermissionPhoneLogs() async {
     if (await Permission.phone.request().isGranted) {
       openPhonelogs();
     } else {

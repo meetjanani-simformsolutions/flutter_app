@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/model/RandomUserModel.dart';
 import 'package:flutter_app/statemanagement/blocapicall/BlocAPICall.dart';
-import 'package:flutter_app/statemanagement/mobxapicall/MobxAPICall.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 
 class BlocAPICallScreen extends StatelessWidget {
   // This widget is the root of your application.
@@ -38,6 +36,7 @@ class _BlocRandomUserListState extends State<BlocRandomUserList> {
   @override
   void dispose() {
     _scrollController.dispose();
+    bloc.dispose();
     super.dispose();
   }
   @override

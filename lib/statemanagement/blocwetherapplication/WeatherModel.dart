@@ -2,7 +2,9 @@ class WeatherModel{
   final temp;
   final pressure;
   final  humidity;
+  // ignore: non_constant_identifier_names
   final temp_max;
+  // ignore: non_constant_identifier_names
   final  temp_min;
 
 

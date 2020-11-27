@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/model/bloc_1/bloc.dart';
 import 'package:flutter_app/pagination.dart';
 
-class Block_1_Screen extends StatelessWidget {
+class BlockScreen extends StatelessWidget {
 
   changeThePage(BuildContext context) {
     Navigator.of(context)

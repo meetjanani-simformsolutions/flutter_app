@@ -1,4 +1,3 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 //Base Class for Bloc Event extends Equatable to make it comparable

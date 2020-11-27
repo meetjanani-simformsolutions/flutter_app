@@ -87,12 +87,6 @@ class _UserListState extends State<UserList> {
         });
   }
 
-  Future<void> _getData() async {
-    setState(() {
-      fetchUsers();
-    });
-  }
-
   @override
   void initState() {
     super.initState();

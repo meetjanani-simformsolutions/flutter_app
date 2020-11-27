@@ -27,8 +27,8 @@ mixin _$MobXAPICallStore on MobXAPICall, Store {
   final _$APICallAsyncAction = AsyncAction('MobXAPICall.APICall');
 
   @override
-  Future<void> APICall() {
-    return _$APICallAsyncAction.run(() => super.APICall());
+  Future<void> apiCall() {
+    return _$APICallAsyncAction.run(() => super.apiCall());
   }
 
   @override

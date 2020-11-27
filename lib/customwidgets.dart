@@ -49,3 +49,47 @@ class EditTextWidget extends StatelessWidget {
     );
   }
 }
+
+
+class CustomRaisedButton extends StatelessWidget {
+
+  final String buttonLable;
+  final VoidCallback onPressed;
+  final double textSize;
+
+  CustomRaisedButton({this.buttonLable, this.onPressed, this.textSize = 21});
+
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+      onPressed: onPressed,
+      textColor: Colors.white,
+      color: Colors.blue,
+      splashColor: Colors.green,
+      elevation: 20,
+      highlightElevation: 100,
+      shape: Border.all(width: 4.0, color: Colors.white),
+      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+      child: Text(buttonLable,style: TextStyle(fontSize: textSize),
+      ),
+    );
+  }
+}
+
+class CustomRow extends StatelessWidget {
+
+  final List<Widget> childrens;
+
+  CustomRow({this.childrens});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: childrens,
+    );
+  }
+}
+
