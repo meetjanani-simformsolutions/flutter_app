@@ -9,7 +9,6 @@ class CounterBloc extends Bloc<CounterBlocEvent, CounterBlocState>{
 
 
   //Set Initial State of Counter Bloc by return the LatestCounterState Object with newCounterValue = 0
-  @override
   // TODO: implement initialState
   CounterBlocState get initialState => LatestCounterState(newCounterValue: 0);
 

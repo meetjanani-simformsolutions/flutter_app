@@ -53,10 +53,10 @@ class _MobXRandomUserListState extends State<MobXRandomUserList> {
   @override
   void initState() {
     super.initState();
-    mobXAPICall.APICall();
+    mobXAPICall.apiCall();
     _scrollController.addListener(() {
       if(_scrollController.position.pixels == _scrollController.position.maxScrollExtent){
-        mobXAPICall.APICall();
+        mobXAPICall.apiCall();
       }
     });
   }

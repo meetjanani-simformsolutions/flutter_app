@@ -1,7 +1,6 @@
 
 import 'dart:async';
 import 'package:flutter_app/model/bloc_1/validator.dart';
-import 'package:mobx/mobx.dart';
 
 class Bloc extends Object with Validators implements BaseBloc{
   final _emailController = StreamController<String>();

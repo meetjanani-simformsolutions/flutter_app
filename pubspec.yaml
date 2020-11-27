@@ -47,6 +47,13 @@ dependencies:
   path:
   oktoast: ^2.3.2
   image_picker:
+  firebase_core: ^0.5.2+1
+  firebase_auth: ^0.18.3+1
+  google_sign_in: ^4.5.6
+#  flutter_facebook_auth: ^1.0.2
+  flutter_facebook_login:
+  sign_in_with_apple: ^2.5.2
+  crypto: ^2.1.5
 
 dev_dependencies:
   flutter_test:

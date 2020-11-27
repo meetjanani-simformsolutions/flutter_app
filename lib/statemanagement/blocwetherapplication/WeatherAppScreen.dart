@@ -32,18 +32,6 @@ class SearchPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-
-        //
-        // Center(
-        //     child: Container(
-        //       child: FlareActor("assets/WorldSpin.flr", fit: BoxFit.contain, animation: "roll",),
-        //       height: 300,
-        //       width: 300,
-        //     )
-        // ),
-
-
-
         BlocBuilder<WeatherBloc, WeatherState>(
           builder: (context, state){
             if(state is WeatherIsNotSearched)
@@ -123,7 +111,7 @@ class SearchPage extends StatelessWidget {
 }
 
 class ShowWeather extends StatelessWidget {
-  WeatherModel weather;
+  final WeatherModel weather;
   final city;
 
   ShowWeather(this.weather, this.city);

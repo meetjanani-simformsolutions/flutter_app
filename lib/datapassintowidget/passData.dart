@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/model/data.dart';
 
 class PassData extends StatefulWidget {
-  Data data;
+  final Data data;
   PassData({Key key,this.data}) : super(key: key);
 
   @override

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>564996909693-uv2ckh9bhl6c7imp8n80sqiqohht82qi.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.564996909693-uv2ckh9bhl6c7imp8n80sqiqohht82qi</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>564996909693-e547mhjhmhhapqpb3355va8fb68riei7.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD9jZcEFDNJ8y-HbX1cf3vf8l9kl649g8c</string>
+	<key>GCM_SENDER_ID</key>
+	<string>564996909693</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.flutterApp</string>
+	<key>PROJECT_ID</key>
+	<string>flutter-meet-demo</string>
+	<key>STORAGE_BUCKET</key>
+	<string>flutter-meet-demo.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:564996909693:ios:55370cf7554c6b43a8df14</string>
+	<key>DATABASE_URL</key>
+	<string>https://flutter-meet-demo.firebaseio.com</string>
+</dict>
+</plist>
