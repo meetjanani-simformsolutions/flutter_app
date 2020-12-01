@@ -23,6 +23,10 @@ import 'package:flutter_app/pulltorefreshdemo.dart';
 import 'package:flutter_app/sidedrawer.dart';
 import 'package:flutter_app/statemanagement/blocwetherapplication/WeatherAppScreen.dart';
 import 'package:flutter_app/statemanagement/mobxapicall/MobxAPICallScreen.dart';
+import 'package:flutter_app/storage/database/noteApp.dart';
+import 'package:flutter_app/storage/database/sqflitescreen.dart';
+import 'package:flutter_app/storage/localstorage.dart';
+import 'package:flutter_app/storage/securestorage.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -66,6 +70,19 @@ class _DashboardScreenState extends State<DashboardScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          CustomRow(
+            childrens: [
+              CustomRaisedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MyHomePage(title: 'Flutter Demo Home Page')),
+                    );
+                  },
+                  buttonLable: "Dashboard"
+              )
+            ],
+          ),
           CustomRow(
             childrens: [
               CustomRaisedButton(
@@ -324,6 +341,41 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
               ),
             ],
+          ),
+          CustomRow(
+            childrens: [
+              CustomRaisedButton(
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LocalStorageDemo()),
+                  );
+                },
+                buttonLable: "Local Storage"
+              ),
+              CustomRaisedButton(
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SqfLiteScreen()),
+                  );
+                },
+                buttonLable: "Flutter Database"
+              ),
+            ],
+          ),
+          CustomRow(
+            childrens: [
+              CustomRaisedButton(
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NoteAppDemo()),
+                  );
+                },
+                buttonLable: "Note APP"
+              ),
+            ],
           )
         ],
       ),
@@ -350,10 +402,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
+    UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
+    SecureStorageDemo secureStorageDemo = SecureStorageDemo();
+    secureStorageDemo.writeSecureData("isLogin", true);
 
     // Once signed in, return the UserCredential
     Fluttertoast.showToast(
-        msg: (await FirebaseAuth.instance.signInWithCredential(credential)).user.email.toString(),
+        msg: userCredential.user.displayName.toString(),
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.BOTTOM,
         timeInSecForIos: 1,
@@ -364,7 +419,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       context,
       MaterialPageRoute(builder: (context) => MyHomePage(title: 'Flutter Demo Home Page')),
     );
-    return await FirebaseAuth.instance.signInWithCredential(credential);
+    return userCredential;
   }
 
   Future<void> signUpWithFacebook() async{

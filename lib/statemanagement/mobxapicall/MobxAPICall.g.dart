@@ -24,11 +24,11 @@ mixin _$MobXAPICallStore on MobXAPICall, Store {
     });
   }
 
-  final _$APICallAsyncAction = AsyncAction('MobXAPICall.APICall');
+  final _$apiCallAsyncAction = AsyncAction('MobXAPICall.apiCall');
 
   @override
   Future<void> apiCall() {
-    return _$APICallAsyncAction.run(() => super.apiCall());
+    return _$apiCallAsyncAction.run(() => super.apiCall());
   }
 
   @override
