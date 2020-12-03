@@ -11,6 +11,8 @@ import 'package:flutter_app/customwidgets.dart';
 import 'package:flutter_app/datapassintowidget/passData.dart';
 import 'package:flutter_app/gridview.dart';
 import 'package:flutter_app/listView.dart';
+import 'package:flutter_app/location/currentlocation.dart';
+import 'package:flutter_app/location/googlemapdemo.dart';
 import 'package:flutter_app/loginpage.dart';
 import 'package:flutter_app/main.dart';
 import 'package:flutter_app/model/bloc_1/block_screen.dart';
@@ -375,6 +377,37 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 },
                 buttonLable: "Note APP"
               ),
+              CustomRaisedButton(
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CurrentLocation()),
+                  );
+                },
+                buttonLable: "Current Location"
+              ),
+            ],
+          ),
+          CustomRow(
+            childrens: [
+              CustomRaisedButton(
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => GoogleMapsDemo()),
+                  );
+                },
+                buttonLable: "Google Map"
+              ),
+              // CustomRaisedButton(
+              //   onPressed: (){
+              //     Navigator.push(
+              //       context,
+              //       MaterialPageRoute(builder: (context) => CurrentLocation()),
+              //     );
+              //   },
+              //   buttonLable: "Current Location"
+              // ),
             ],
           )
         ],

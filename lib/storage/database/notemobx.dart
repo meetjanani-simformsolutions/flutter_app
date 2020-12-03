@@ -40,7 +40,6 @@ abstract class NoteMobx with Store{
       themeData = ThemeData( primarySwatch: Colors.blue,
           brightness: Brightness.light);
     }
-    print(currentTheme + " ff");
   }
 
   @observable
